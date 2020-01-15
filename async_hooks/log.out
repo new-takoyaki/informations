@@ -1,0 +1,11 @@
+before: 6
+after: 6
+destroy: 6
+before: 8
+  before: 7
+  after: 7
+after: 8
+before: 9
+after: 9
+destroy: 7
+destroy: 9
