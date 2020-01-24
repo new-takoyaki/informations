@@ -12,7 +12,9 @@ const server = http.createServer(function(req, res) {
 const server2 = http.Server({pauseOnConnect: true}, function(req, res) {
 	console.log("new request here");
 	console.log(req.headers);
-	res.writeHead(200, {'Content-Type' : 'text/plain'});
+	res.writeHead(200, {'Content-Type' : 'text/plain',
+						'Trailer': 'Content-MD5' });
+	res.addTrailers({'Content-MD5': '7895bf4b8828b55ceaf47747b4bca667'});
 	res.write('Hello World!');
 	res.end();
 });
